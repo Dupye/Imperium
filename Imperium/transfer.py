@@ -1,6 +1,14 @@
 import requests
-import json, os, tqdm
+import json, os
 
+try:
+    requirements = os.path.join(os.path.dirname(__file__), 'requirements.txt')
+    os.system(f'{sys.executable} -m pip install -r {requirements}')
+except NameError:
+    pass
+
+
+import tqdm
 from time import sleep
 from time import time
 from json import dumps, load
